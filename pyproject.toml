@@ -1,0 +1,17 @@
+[project]
+name = "scrapegraph-qdrant-article"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "aiofiles>=24.1.0",
+    "einops>=0.8.1",
+    "notebook>=7.4.5",
+    "python-dotenv>=1.1.1",
+    "qdrant-client>=1.15.1",
+    "scrapegraph-py==1.24.0",
+    "sentence-transformers>=5.1.0",
+    "timm>=1.0.19",
+    "torchvision>=0.23.0",
+]
