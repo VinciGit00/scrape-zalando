@@ -24,8 +24,12 @@ jobs:
         run: |
           mkdir -p markdowns
           jupyter nbconvert *.ipynb --to markdown --output-dir markdowns
+
+      - name: Check git status
+        run: git status
+
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
-          commit_message: "docs: convert notebooks to markdown"
+          commit_message: "docs: convert notebooks to markdown [skip ci]"
           file_pattern: "markdowns/**/*.md"
