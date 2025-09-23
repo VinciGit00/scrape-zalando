@@ -1,0 +1,31 @@
+name: Convert Jupyter to Markdown
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: pip install nbconvert
+
+      - name: Convert notebooks
+        run: |
+          mkdir -p markdowns
+          jupyter nbconvert *.ipynb --to markdown --output-dir markdowns
+      - name: Commit changes
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "docs: convert notebooks to markdown"
+          file_pattern: "markdowns/**/*.md"
