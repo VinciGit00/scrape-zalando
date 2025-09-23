@@ -25,7 +25,7 @@ jobs:
       - name: Convert notebooks
         run: |
           mkdir -p markdowns
-          jupyter nbconvert *.ipynb --to markdown --template-file=templates/keep_html.tpl --output-dir=markdowns
+          jupyter nbconvert *.ipynb --to markdown --output-dir=markdowns
 
       - name: Fix image paths
         run: sed -i 's|](./images/|](../images/|g' markdowns/*.md
