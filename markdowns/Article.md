@@ -29,7 +29,7 @@ Finally, we need to save our juicy vectors somewhere. [Qdrant](https://qdrant.te
 
 So, to recap. How plan of attack looks something like
 
-![alt](./images/flow.png)
+![alt](../images/flow.png)
 
 1. Scrape with Scrapegraph
 2. Embed with Jina ClipV2
@@ -89,7 +89,7 @@ SGAI_API_KEY = os.getenv("SGAI_API_KEY")
 Now, we need to define the data we want. Each article/item in the website looks like:
 
 
-![alt](../images/zalando-article.png)
+![alt](images/zalando-article.png)
 
 We have a brand, name, description, price, image, review etc.
 
@@ -473,11 +473,11 @@ store_to_vector_db()
 
 We can head over the [qdrant ui](http://localhost:6333/dashboard#/collections/clothes) to see our data
 
-![alt](../images/sgai-qdrant-frontend.gif)
+![alt](images/sgai-qdrant-frontend.gif)
 
 It also comes with a very cool dimension reduction tab; to explore our data even further!
 
-![alt](../images/sgai-qdrant-frontend-embeddings.gif)
+![alt](images/sgai-qdrant-frontend-embeddings.gif)
 
 ### Searching
 
