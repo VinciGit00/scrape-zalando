@@ -20,12 +20,12 @@ jobs:
           python-version: "3.x"
 
       - name: Install dependencies
-        run: pip install nbconvert
+        run: pip install 'nbconvert>=7.0'
 
       - name: Convert notebooks
         run: |
           mkdir -p markdowns
-          jupyter nbconvert *.ipynb --to gfm --output-dir markdowns
+          jupyter nbconvert *.ipynb --to markdown --template-file=templates/keep_html.tpl --output-dir=markdowns
 
       - name: Fix image paths
         run: sed -i 's|](./images/|](../images/|g' markdowns/*.md
